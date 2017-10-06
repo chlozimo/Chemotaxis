@@ -1,14 +1,19 @@
-Bacteria bob;
+Bacteria[] colony;
  void setup()   
  { 
    size(500,500);
-   bob = new Bacteria();
+   colony = new Bacteria[500];
+   for(int i = 0; i < colony.length; i++)
+     colony[i] = new Bacteria();
  }   
  void draw()   
  {    
    background(0,5,50);
-   bob.move();
-   bob.show();
+   for( int i = 0; i < colony.length; i++)
+   {
+     colony[i].move();
+     colony[i].show();
+   }
  }  
  class Bacteria    
  {     
